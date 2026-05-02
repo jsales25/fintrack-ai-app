@@ -14,31 +14,29 @@ export interface BalanceCardProps {
     /** Saldo total (receitas + despesas) */
     balance: number;
     /** Saldo total de receitas do período */
-    receitas: number;
+    revenues: number;
     /** Saldo total de despesas do período */
-    despesas: number;
+    expenses: number;
 }
 
 export default function BalanceCard({
     balance,
-    receitas,
-    despesas,
+    revenues,
+    expenses,
 }: BalanceCardProps) {
     return (
         <section
-            className="relative flex w-full flex-col justify-between gap-2 self-stretch overflow-hidden rounded-[24px] bg-[#9333ea] p-8 font-[family-name:var(--font-inter)] shadow-[0px_8px_10px_-6px_rgba(168, 85, 24, 0.2), 0px_20px_25px_-5px_rgba(168, 85, 247, 0.2)]"
+            className="relative flex w-full flex-col justify-between gap-2 self-stretch overflow-hidden rounded-3xl bg-[#9333ea] p-8 font-[family-name:var(--font-inter)] shadow-[0px_8px_10px_-6px_rgba(168, 85, 24, 0.2), 0px_20px_25px_-5px_rgba(168, 85, 247, 0.2)]"
             aria-label="Resumo do saldo"
         >
             {/* Overlays decorativos (círculos suaves) */}
             <div
-                className="pointer-events-none absolute rounded-full bg-white/10"
-                style={{ width: 256, height: 256, top: 46, right: -80 }}
+                className="pointer-events-none absolute rounded-full bg-white/10 w-[256px] h-[256px] top-[46px] right[-80px]"
                 aria-hidden
             />
 
             <div
-                className="pointer-events-none absolute rounded-full bg-white/5"
-                style={{ width: 192, height: 192, left: -48, top: -48 }}
+                className="pointer-events-none absolute rounded-full bg-white/5 w-[192px] h-[192px] top-[-48px] left-[-48px]"
                 aria-hidden
             />
 
@@ -54,7 +52,7 @@ export default function BalanceCard({
                     </p>
                 </div>
 
-                <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white/20 p-3 pb-3.5 pt-3 backdrop-blur-[12px]">
+                <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white/20 p-3 pb-3.5 pt-3 backdrop-blur-md">
                     <Image
                         src={decorative}
                         alt=""
@@ -90,7 +88,7 @@ export default function BalanceCard({
                     </div>
 
                     <p className="text-xl font-semibold leading-[1.4] text-white">
-                        {formatBRL(receitas)}
+                        {formatBRL(revenues)}
                     </p>
                 </div>
 
@@ -110,7 +108,7 @@ export default function BalanceCard({
                     </div>
 
                     <p className="text-xl font-semibold leading-[1.4] text-white">
-                        {formatBRL(despesas)}
+                        {formatBRL(expenses)}
                     </p>
                 </div>
             </div>

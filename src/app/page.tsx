@@ -1,6 +1,7 @@
 import { Sidebar } from './_components/sidebar';
 import { Header } from './_components/header';
 import BalanceCard from './_components/balance-card';
+import { FinancialMetricCard } from './_components/financial-metric-card';
 
 export default function Home() {
     return (
@@ -8,12 +9,23 @@ export default function Home() {
             <Sidebar />
             <div className="flex flex-1 flex-col">
                 <Header userName="João da Silva" date={new Date()} />
-                <main className="flex-1 p-8">
-                    <BalanceCard
-                    balance={1000}
-                    receitas={500}
-                    despesas={500}
-                    />
+
+                <main className="p-8 space-y-8">
+                    <section className="grid lg:grid-cols-3 grid-cols-1 gap-6">
+                        <div className="lg:col-span-2 col-span-1">
+                            <BalanceCard
+                                balance={1000}
+                                revenues={500}
+                                expenses={500}
+                            />
+                        </div>
+
+                        <FinancialMetricCard />
+                    </section>
+
+                    <section>
+                        
+                    </section>
                 </main>
             </div>
         </div>
