@@ -3,6 +3,7 @@ import { Header } from './_components/header';
 import BalanceCard from './_components/balance-card';
 import { FinancialMetricCard } from './_components/financial-metric-card';
 import { ChartCard } from './_components/chart-card';
+import { AiInsights } from './_components/ai-insights';
 
 export default function Home() {
     return (
@@ -24,13 +25,21 @@ export default function Home() {
                         <FinancialMetricCard />
                     </section>
 
-                    <section className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
-                        <ChartCard
+                    <section className='flex gap-8'>
+                        <div className='flex-1'>
+                            <ChartCard
                             depositsTotal={1000}
                             expensesTotal={500}
                             investmentsTotal={500}
                             balance={1000}
                         />
+                        </div>
+
+                        <div className='flex-1'>
+                            <AiInsights />
+                        </div>
+                        
+                        
                     </section>
                 </main>
             </div>
